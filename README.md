@@ -1,3 +1,6 @@
+[![](https://jitpack.io/v/FeryaFox/GLampJava.svg)](https://jitpack.io/#FeryaFox/GLampJava)
+[![wakatime](https://wakatime.com/badge/user/040e3f1d-4edd-42ac-a33c-0c540473f6df/project/bad78b5e-0e06-4eae-bd0b-157d069f8c7a.svg)](https://wakatime.com/badge/user/040e3f1d-4edd-42ac-a33c-0c540473f6df/project/bad78b5e-0e06-4eae-bd0b-157d069f8c7a)
+
 # GyverLamp 2 
 Библиотека для управления GyverLamp 2 на Java. 
 
