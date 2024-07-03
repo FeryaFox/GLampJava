@@ -7,7 +7,7 @@ public class GLampSettings {
     private String adc = "1";
     private String min_brightness = "0";
     private String max_brightness = "255";
-    private String regime_change = "0";
+    private String mode_change = "0";
     private String random_order_modes = "0";
     private String shift_period = "1";
     private String strip_type = "2";
@@ -26,7 +26,7 @@ public class GLampSettings {
     private String mqtt_login = "gyver";
     private String mqtt_pass = "123456";
 
-    public GLampSettings(String brightness, String adc, String min_brightness, String max_brightness, String regime_change,
+    public GLampSettings(String brightness, String adc, String min_brightness, String max_brightness, String mode_change,
                          String random_order_modes, String shift_period, String strip_type, String maximal_current,
                          String work_hours_from, String work_hours_to, String matrix_orientation, String height, String width,
                          String gmt, String city_id, String mqtt_state, String mqtt_id, String mqtt_host, String mqtt_port,
@@ -35,7 +35,7 @@ public class GLampSettings {
         this.adc = adc;
         this.min_brightness = min_brightness;
         this.max_brightness = max_brightness;
-        this.regime_change = regime_change;
+        this.mode_change = mode_change;
         this.random_order_modes = random_order_modes;
         this.shift_period = shift_period;
         this.strip_type = strip_type;
@@ -73,7 +73,7 @@ public class GLampSettings {
     }
 
     public String getRegimeChange() {
-        return regime_change;
+        return mode_change;
     }
 
     public String getRandomOrderModes() {
@@ -146,7 +146,7 @@ public class GLampSettings {
 
     @Override
     public String toString() {
-        return brightness + "," + adc + "," + min_brightness + "," + max_brightness + "," + regime_change + "," +
+        return brightness + "," + adc + "," + min_brightness + "," + max_brightness + "," + mode_change + "," +
                 random_order_modes + "," + shift_period + "," + strip_type + "," + maximal_current + "," +
                 work_hours_from + "," + work_hours_to + "," + matrix_orientation + "," + height + "," + width + "," +
                 gmt + "," + city_id + "," + mqtt_state + "," + mqtt_id + "," + mqtt_host + "," + mqtt_port + "," +
@@ -162,7 +162,7 @@ public class GLampSettings {
         private String adc = "1";
         private String min_brightness = "0";
         private String max_brightness = "255";
-        private String regime_change = "0";
+        private String mode_change = "0";
         private String random_order_modes = "0";
         private String shift_period = "1";
         private String strip_type = "2";
@@ -237,16 +237,16 @@ public class GLampSettings {
             return this;
         }
 
-        public Builder setRegimeChange(String regime_change) {
-            if ( Integer.parseInt(regime_change) < 0  || Integer.parseInt(regime_change) > 1) throw new GLampParamsException("setRegimeChange", "Параметр regime_change должный быть 0 (ручная) или 1 (авто)");
-            this.regime_change = regime_change;
+        public Builder setModesChange(String modes_change) {
+            if ( Integer.parseInt(modes_change) < 0  || Integer.parseInt(modes_change) > 1) throw new GLampParamsException("setModesChange", "Параметр modes_change должный быть 0 (ручная) или 1 (авто)");
+            this.mode_change = modes_change;
 
             return this;
         }
 
-        public Builder setRegimeChange(Integer regime_change) {
-            if ( regime_change < 0  || regime_change > 1) throw new GLampParamsException("setRegimeChange", "Параметр regime_change должный быть 0 (ручная) или 1 (авто)");
-            this.regime_change = regime_change.toString();
+        public Builder setModesChange(Integer regime_change) {
+            if ( regime_change < 0  || regime_change > 1) throw new GLampParamsException("setModesChange", "Параметр regime_change должный быть 0 (ручная) или 1 (авто)");
+            this.mode_change = regime_change.toString();
 
             return this;
         }
@@ -429,6 +429,10 @@ public class GLampSettings {
             return this;
         }
 
+        public Builder setMqttPort(Integer mqtt_port) {
+            return setMqttPort(mqtt_port.toString());
+        }
+
         public Builder setMqttLogin(String mqtt_login) {
             this.mqtt_login = mqtt_login;
 
@@ -442,7 +446,7 @@ public class GLampSettings {
         }
 
         public GLampSettings build(){
-            return new GLampSettings(brightness, adc, min_brightness, max_brightness, regime_change, random_order_modes,
+            return new GLampSettings(brightness, adc, min_brightness, max_brightness, mode_change, random_order_modes,
                     shift_period, strip_type, maximal_current, work_hours_from, work_hours_to,
                     matrix_orientation, height, width, gmt, city_id, mqtt_state, mqtt_id,
                     mqtt_host, mqtt_port, mqtt_login, mqtt_pass);
@@ -456,7 +460,7 @@ public class GLampSettings {
         b.setAdc(r[3]);
         b.setMinBrightness(r[4]);
         b.setMaxBrightness(r[5]);
-        b.setRegimeChange(r[6]);
+        b.setModesChange(r[6]);
         b.setRandomOrderModes(r[7]);
         b.setShiftPeriod(r[8]);
         b.setStripType(r[9]);

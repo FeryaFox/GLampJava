@@ -113,7 +113,7 @@ public class GLamp {
         }
     }
 
-    public void sendRequests(String command){
+    private void sendRequests(String command){
         try {
             String message = "GL," + command;
             byte[] buffer = message.getBytes();
@@ -129,7 +129,7 @@ public class GLamp {
         }
     }
 
-    public String getResponse(String response_type){
+    private String getResponse(String response_type){
         return getResponse(20, response_type);
     }
 
