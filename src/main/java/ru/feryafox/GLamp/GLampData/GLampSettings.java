@@ -5,54 +5,54 @@ import ru.feryafox.GLamp.Exceptions.GLampParamsException;
 public class GLampSettings {
     private String brightness = "100";
     private String adc = "1";
-    private String min_brightness = "0";
-    private String max_brightness = "255";
-    private String mode_change = "0";
-    private String random_order_modes = "0";
-    private String shift_period = "1";
-    private String strip_type = "2";
-    private String maximal_current = "15";
-    private String work_hours_from = "0";
-    private String work_hours_to = "0";
-    private String matrix_orientation = "1";
+    private String minBrightness = "0";
+    private String maxBrightness = "255";
+    private String modeChange = "0";
+    private String randomOrderModes = "0";
+    private String shiftPeriod = "1";
+    private String stripType = "2";
+    private String maximalCurrent = "15";
+    private String workHoursFrom = "0";
+    private String workHoursTo = "0";
+    private String matrixOrientation = "1";
     private String height = "16";
     private String width = "16";
     private String gmt = "16";
-    private String city_id = "524901";
-    private String mqtt_state = "0";
-    private String mqtt_id = "alexLamp123";
-    private String mqtt_host = "broker.mqttdashboard.com";
-    private String mqtt_port = "1883";
-    private String mqtt_login = "gyver";
-    private String mqtt_pass = "123456";
+    private String cityId = "524901";
+    private String mqttState = "0";
+    private String mqttId = "alexLamp123";
+    private String mqttHost = "broker.mqttdashboard.com";
+    private String mqttPort = "1883";
+    private String mqttLogin = "gyver";
+    private String mqttPass = "123456";
 
-    public GLampSettings(String brightness, String adc, String min_brightness, String max_brightness, String mode_change,
-                         String random_order_modes, String shift_period, String strip_type, String maximal_current,
-                         String work_hours_from, String work_hours_to, String matrix_orientation, String height, String width,
-                         String gmt, String city_id, String mqtt_state, String mqtt_id, String mqtt_host, String mqtt_port,
-                         String mqtt_login, String mqtt_pass) {
+    public GLampSettings(String brightness, String adc, String minBrightness, String maxBrightness, String modeChange,
+                         String randomOrderModes, String shiftPeriod, String stripType, String maximalCurrent,
+                         String workHoursFrom, String workHoursTo, String matrixOrientation, String height, String width,
+                         String gmt, String cityId, String mqttState, String mqttId, String mqttHost, String mqttPort,
+                         String mqttLogin, String mqttPass) {
         this.brightness = brightness;
         this.adc = adc;
-        this.min_brightness = min_brightness;
-        this.max_brightness = max_brightness;
-        this.mode_change = mode_change;
-        this.random_order_modes = random_order_modes;
-        this.shift_period = shift_period;
-        this.strip_type = strip_type;
-        this.maximal_current = maximal_current;
-        this.work_hours_from = work_hours_from;
-        this.work_hours_to = work_hours_to;
-        this.matrix_orientation = matrix_orientation;
+        this.minBrightness = minBrightness;
+        this.maxBrightness = maxBrightness;
+        this.modeChange = modeChange;
+        this.randomOrderModes = randomOrderModes;
+        this.shiftPeriod = shiftPeriod;
+        this.stripType = stripType;
+        this.maximalCurrent = maximalCurrent;
+        this.workHoursFrom = workHoursFrom;
+        this.workHoursTo = workHoursTo;
+        this.matrixOrientation = matrixOrientation;
         this.height = height;
         this.width = width;
         this.gmt = gmt;
-        this.city_id = city_id;
-        this.mqtt_state = mqtt_state;
-        this.mqtt_id = mqtt_id;
-        this.mqtt_host = mqtt_host;
-        this.mqtt_port = mqtt_port;
-        this.mqtt_login = mqtt_login;
-        this.mqtt_pass = mqtt_pass;
+        this.cityId = cityId;
+        this.mqttState = mqttState;
+        this.mqttId = mqttId;
+        this.mqttHost = mqttHost;
+        this.mqttPort = mqttPort;
+        this.mqttLogin = mqttLogin;
+        this.mqttPass = mqttPass;
     }
 
 
@@ -65,43 +65,43 @@ public class GLampSettings {
     }
 
     public String getMinBrightness() {
-        return min_brightness;
+        return minBrightness;
     }
 
     public String getMaxBrightness() {
-        return max_brightness;
+        return maxBrightness;
     }
 
     public String getRegimeChange() {
-        return mode_change;
+        return modeChange;
     }
 
     public String getRandomOrderModes() {
-        return random_order_modes;
+        return randomOrderModes;
     }
 
     public String getShiftPeriod() {
-        return shift_period;
+        return shiftPeriod;
     }
 
     public String getStripType() {
-        return strip_type;
+        return stripType;
     }
 
     public String getMaximalCurrent() {
-        return maximal_current;
+        return maximalCurrent;
     }
 
     public String getWorkHoursFrom() {
-        return work_hours_from;
+        return workHoursFrom;
     }
 
     public String getWorkHoursTo() {
-        return work_hours_to;
+        return workHoursTo;
     }
 
     public String getMatrixOrientation() {
-        return matrix_orientation;
+        return matrixOrientation;
     }
 
     public String getHeight() {
@@ -117,40 +117,128 @@ public class GLampSettings {
     }
 
     public String getCityId() {
-        return city_id;
+        return cityId;
     }
 
     public String getMqttState() {
-        return mqtt_state;
+        return mqttState;
     }
 
     public String getMqttId() {
-        return mqtt_id;
+        return mqttId;
     }
 
     public String getMqttHost() {
-        return mqtt_host;
+        return mqttHost;
     }
 
     public String getMqttPort() {
-        return mqtt_port;
+        return mqttPort;
     }
 
     public String getMqttLogin() {
-        return mqtt_login;
+        return mqttLogin;
     }
 
     public String getMqttPass() {
-        return mqtt_pass;
+        return mqttPass;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public void setBrightness(String brightness) {
+        this.brightness = brightness;
+    }
+
+    public void setAdc(String adc) {
+        this.adc = adc;
+    }
+
+    public void setMinBrightness(String minBrightness) {
+        this.minBrightness = minBrightness;
+    }
+
+    public void setMaxBrightness(String maxBrightness) {
+        this.maxBrightness = maxBrightness;
+    }
+
+    public void setModeChange(String modeChange) {
+        this.modeChange = modeChange;
+    }
+
+    public void setRandomOrderModes(String randomOrderModes) {
+        this.randomOrderModes = randomOrderModes;
+    }
+
+    public void setShiftPeriod(String shiftPeriod) {
+        this.shiftPeriod = shiftPeriod;
+    }
+
+    public void setStripType(String stripType) {
+        this.stripType = stripType;
+    }
+
+    public void setMaximalCurrent(String maximalCurrent) {
+        this.maximalCurrent = maximalCurrent;
+    }
+
+    public void setWorkHoursFrom(String workHoursFrom) {
+        this.workHoursFrom = workHoursFrom;
+    }
+
+    public void setWorkHoursTo(String workHoursTo) {
+        this.workHoursTo = workHoursTo;
+    }
+
+    public void setMatrixOrientation(String matrixOrientation) {
+        this.matrixOrientation = matrixOrientation;
+    }
+
+    public void setWidth(String width) {
+        this.width = width;
+    }
+
+    public void setGmt(String gmt) {
+        this.gmt = gmt;
+    }
+
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
+    }
+
+    public void setMqttState(String mqttState) {
+        this.mqttState = mqttState;
+    }
+
+    public void setMqttId(String mqttId) {
+        this.mqttId = mqttId;
+    }
+
+    public void setMqttHost(String mqttHost) {
+        this.mqttHost = mqttHost;
+    }
+
+    public void setMqttPort(String mqttPort) {
+        this.mqttPort = mqttPort;
+    }
+
+    public void setMqttLogin(String mqttLogin) {
+        this.mqttLogin = mqttLogin;
+    }
+
+    public void setMqttPass(String mqttPass) {
+        this.mqttPass = mqttPass;
     }
 
     @Override
     public String toString() {
-        return brightness + "," + adc + "," + min_brightness + "," + max_brightness + "," + mode_change + "," +
-                random_order_modes + "," + shift_period + "," + strip_type + "," + maximal_current + "," +
-                work_hours_from + "," + work_hours_to + "," + matrix_orientation + "," + height + "," + width + "," +
-                gmt + "," + city_id + "," + mqtt_state + "," + mqtt_id + "," + mqtt_host + "," + mqtt_port + "," +
-                mqtt_login + "," + mqtt_pass;
+        return brightness + "," + adc + "," + minBrightness + "," + maxBrightness + "," + modeChange + "," +
+                randomOrderModes + "," + shiftPeriod + "," + stripType + "," + maximalCurrent + "," +
+                workHoursFrom + "," + workHoursTo + "," + matrixOrientation + "," + height + "," + width + "," +
+                gmt + "," + cityId + "," + mqttState + "," + mqttId + "," + mqttHost + "," + mqttPort + "," +
+                mqttLogin + "," + mqttPass;
     }
 
     public static class Builder{

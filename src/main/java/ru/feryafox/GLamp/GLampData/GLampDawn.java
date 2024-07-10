@@ -152,6 +152,98 @@ public class GLampDawn{
         return minutesBeforeDawn;
     }
 
+    public void setFridayHour(String fridayHour) {
+        this.fridayHour = fridayHour;
+    }
+
+    public void setSundayStatus(String sundayStatus) {
+        this.sundayStatus = sundayStatus;
+    }
+
+    public void setMondayStatus(String mondayStatus) {
+        this.mondayStatus = mondayStatus;
+    }
+
+    public void setTuesdayStatus(String tuesdayStatus) {
+        this.tuesdayStatus = tuesdayStatus;
+    }
+
+    public void setWednesdayStatus(String wednesdayStatus) {
+        this.wednesdayStatus = wednesdayStatus;
+    }
+
+    public void setThursdayStatus(String thursdayStatus) {
+        this.thursdayStatus = thursdayStatus;
+    }
+
+    public void setFridayStatus(String fridayStatus) {
+        this.fridayStatus = fridayStatus;
+    }
+
+    public void setSaturdayStatus(String saturdayStatus) {
+        this.saturdayStatus = saturdayStatus;
+    }
+
+    public void setSundayHour(String sundayHour) {
+        this.sundayHour = sundayHour;
+    }
+
+    public void setMondayHour(String mondayHour) {
+        this.mondayHour = mondayHour;
+    }
+
+    public void setTuesdayHour(String tuesdayHour) {
+        this.tuesdayHour = tuesdayHour;
+    }
+
+    public void setWednesdayHour(String wednesdayHour) {
+        this.wednesdayHour = wednesdayHour;
+    }
+
+    public void setThursdayHour(String thursdayHour) {
+        this.thursdayHour = thursdayHour;
+    }
+
+    public void setSaturdayHour(String saturdayHour) {
+        this.saturdayHour = saturdayHour;
+    }
+
+    public void setSundayMinute(String sundayMinute) {
+        this.sundayMinute = sundayMinute;
+    }
+
+    public void setMondayMinute(String mondayMinute) {
+        this.mondayMinute = mondayMinute;
+    }
+
+    public void setTuesdayMinute(String tuesdayMinute) {
+        this.tuesdayMinute = tuesdayMinute;
+    }
+
+    public void setWednesdayMinute(String wednesdayMinute) {
+        this.wednesdayMinute = wednesdayMinute;
+    }
+
+    public void setThursdayMinute(String thursdayMinute) {
+        this.thursdayMinute = thursdayMinute;
+    }
+
+    public void setFridayMinute(String fridayMinute) {
+        this.fridayMinute = fridayMinute;
+    }
+
+    public void setSaturdayMinute(String saturdayMinute) {
+        this.saturdayMinute = saturdayMinute;
+    }
+
+    public void setBrightness(String brightness) {
+        this.brightness = brightness;
+    }
+
+    public void setMinutesBeforeDawn(String minutesBeforeDawn) {
+        this.minutesBeforeDawn = minutesBeforeDawn;
+    }
+
     @Override
     public String toString() {
         return sundayStatus + "," + mondayStatus + "," + tuesdayStatus + "," + wednesdayStatus + ","

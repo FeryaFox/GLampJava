@@ -3,48 +3,48 @@ package ru.feryafox.GLamp.GLampData;
 import ru.feryafox.GLamp.Exceptions.GLampParamsException;
 
 public class GLampMode {
-    private String effect_type = "";
-    private String flag_personal_brightness  = "";
-    private String personal_brightness = "";
+    private String effectType = "";
+    private String flagPersonalBrightness = "";
+    private String personalBrightness = "";
     private String additional = "";
-    private String sound_reaction = "";
-    private String min_signal = "";
-    private String max_signal = "";
+    private String soundReaction = "";
+    private String minSignal = "";
+    private String maxSignal = "";
     private String speed = "";
     private String palette = "";
     private String scale = "";
-    private String from_center = "";
+    private String fromCenter = "";
     private String color = "";
     private String random = "";
 
-    public GLampMode(String effect_type, String flag_personal_brightness, String personal_brightness,
-                     String additional, String sound_reaction, String min_signal, String max_signal, String speed,
-                     String palette, String scale, String from_center, String color, String random) {
-        this.effect_type = effect_type;
-        this.flag_personal_brightness = flag_personal_brightness;
-        this.personal_brightness = personal_brightness;
+    public GLampMode(String effectType, String flagPersonalBrightness, String personalBrightness,
+                     String additional, String soundReaction, String minSignal, String maxSignal, String speed,
+                     String palette, String scale, String fromCenter, String color, String random) {
+        this.effectType = effectType;
+        this.flagPersonalBrightness = flagPersonalBrightness;
+        this.personalBrightness = personalBrightness;
         this.additional = additional;
-        this.sound_reaction = sound_reaction;
-        this.min_signal = min_signal;
-        this.max_signal = max_signal;
+        this.soundReaction = soundReaction;
+        this.minSignal = minSignal;
+        this.maxSignal = maxSignal;
         this.speed = speed;
         this.palette = palette;
         this.scale = scale;
-        this.from_center = from_center;
+        this.fromCenter = fromCenter;
         this.color = color;
         this.random = random;
     }
 
     public String getEffectType() {
-        return effect_type;
+        return effectType;
     }
 
     public String getFlagPersonalBrightness() {
-        return flag_personal_brightness;
+        return flagPersonalBrightness;
     }
 
     public String getPersonalBrightness() {
-        return personal_brightness;
+        return personalBrightness;
     }
 
     public String getAdditional() {
@@ -52,15 +52,15 @@ public class GLampMode {
     }
 
     public String getSoundReaction() {
-        return sound_reaction;
+        return soundReaction;
     }
 
     public String getMinSignal() {
-        return min_signal;
+        return minSignal;
     }
 
     public String getMaxSignal() {
-        return max_signal;
+        return maxSignal;
     }
 
     public String getSpeed() {
@@ -76,7 +76,7 @@ public class GLampMode {
     }
 
     public String getFromCenter() {
-        return from_center;
+        return fromCenter;
     }
 
     public String getColor() {
@@ -87,67 +87,118 @@ public class GLampMode {
         return random;
     }
 
+    public void setFlagPersonalBrightness(String flag_personal_brightness) {
+        this.flagPersonalBrightness = flag_personal_brightness;
+    }
+
+    public void setEffectType(String effectType) {
+        this.effectType = effectType;
+    }
+
+    public void setPersonalBrightness(String personalBrightness) {
+        this.personalBrightness = personalBrightness;
+    }
+
+    public void setAdditional(String additional) {
+        this.additional = additional;
+    }
+
+    public void setSoundReaction(String soundReaction) {
+        this.soundReaction = soundReaction;
+    }
+
+    public void setMinSignal(String minSignal) {
+        this.minSignal = minSignal;
+    }
+
+    public void setMaxSignal(String maxSignal) {
+        this.maxSignal = maxSignal;
+    }
+
+    public void setSpeed(String speed) {
+        this.speed = speed;
+    }
+
+    public void setPalette(String palette) {
+        this.palette = palette;
+    }
+
+    public void setScale(String scale) {
+        this.scale = scale;
+    }
+
+    public void setFromCenter(String fromCenter) {
+        this.fromCenter = fromCenter;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setRandom(String random) {
+        this.random = random;
+    }
 
     @Override
     public String toString() {
-        return effect_type + "," + flag_personal_brightness + "," + personal_brightness + ","
-                + additional + "," + sound_reaction + "," + min_signal + "," + max_signal + "," + speed + ","
-                + palette + "," + scale + "," + from_center + "," + color + "," + random;
+        return effectType + "," + flagPersonalBrightness + "," + personalBrightness + ","
+                + additional + "," + soundReaction + "," + minSignal + "," + maxSignal + "," + speed + ","
+                + palette + "," + scale + "," + fromCenter + "," + color + "," + random;
     }
 
     public static class Builder{
-        private String effect_type = "";
-        private String flag_personal_brightness  = "";
-        private String personal_brightness = "";
+        private String effectType = "";
+        private String flagPersonalBrightness = "";
+        private String personalBrightness = "";
         private String additional = "";
-        private String sound_reaction = "";
-        private String min_signal = "";
-        private String max_signal = "";
+        private String soundReaction = "";
+        private String minSignal = "";
+        private String maxSignal = "";
         private String speed = "";
         private String palette = "";
         private String scale = "";
-        private String from_center = "";
+        private String fromCenter = "";
         private String color = "";
         private String random = "";
 
         public Builder setEffectType(String effect_type) {
             if ( Integer.parseInt(effect_type) < 1  || Integer.parseInt(effect_type) > 7) throw new GLampParamsException("setEffectType", "Параметр effect_type должный быть 1 (Перлин) или 2 (Цвет) или 3 (Смена) или 4 (Градиент) или 5 (Частицы) или 6 (Огонь) или 7 (Погода)");
-            this.effect_type = effect_type;
+            this.effectType = effect_type;
 
             return this;
         }
 
         public Builder setEffectType(Integer effect_type) {
             if ( effect_type < 1  || effect_type > 7) throw new GLampParamsException("setEffectType", "Параметр effect_type должный быть 1 (Перлин) или 2 (Цвет) или 3 (Смена) или 4 (Градиент) или 5 (Частицы) или 6 (Огонь) или 7 (Погода)");
-            this.effect_type = effect_type.toString();
+            this.effectType = effect_type.toString();
 
             return this;
         }
 
         public Builder setFlagPersonalBrightness(String flag_personal_brightness) {
             if ( Integer.parseInt(flag_personal_brightness) < 0  || Integer.parseInt(flag_personal_brightness) > 1) throw new GLampParamsException("setFlagPersonalBrightness", "Параметр flag_personal_brightness должный быть 0 (выкл) или 1 (вкл)");
-            this.flag_personal_brightness = flag_personal_brightness;
+            this.flagPersonalBrightness = flag_personal_brightness;
 
             return this;
         }
 
         public Builder setFlagPersonalBrightness(Integer flag_personal_brightness) {
             if ( flag_personal_brightness < 0  || flag_personal_brightness > 1) throw new GLampParamsException("setFlagPersonalBrightness", "Параметр flag_personal_brightness должный быть 0 (выкл) или 1 (вкл)");
-            this.flag_personal_brightness = flag_personal_brightness.toString();
+            this.flagPersonalBrightness = flag_personal_brightness.toString();
 
             return this;
         }
 
         public Builder setPersonalBrightness(String personal_brightness) {
             if ( Integer.parseInt(personal_brightness) < 0  || Integer.parseInt(personal_brightness) > 255) throw new GLampParamsException("setPersonalBrightness", "Параметр personal_brightness должный быть в промежутке от 0 до 255");
-            this.personal_brightness = personal_brightness;
+            this.personalBrightness = personal_brightness;
 
             return this;
         }
 
         public Builder setPersonalBrightness(Integer personal_brightness) {
             if ( personal_brightness < 0  || personal_brightness > 255) throw new GLampParamsException("setPersonalBrightness", "Параметр personal_brightness должный быть в промежутке от 0 до 255");
-            this.personal_brightness = personal_brightness.toString();
+            this.personalBrightness = personal_brightness.toString();
 
             return this;
         }
@@ -168,42 +219,42 @@ public class GLampMode {
 
         public Builder setSoundReaction(String sound_reaction) {
             if ( Integer.parseInt(sound_reaction) < 1  || Integer.parseInt(sound_reaction) > 3) throw new GLampParamsException("setSoundReaction", "Параметр sound_reaction должный быть 1 (Яркость) или 2 (Масштаб) или 3 (Длина)");
-            this.sound_reaction = sound_reaction;
+            this.soundReaction = sound_reaction;
 
             return this;
         }
 
         public Builder setSoundReaction(Integer sound_reaction) {
             if ( sound_reaction < 1  || sound_reaction > 3) throw new GLampParamsException("setSoundReaction", "Параметр sound_reaction должный быть 1 (Яркость) или 2 (Масштаб) или 3 (Длина)");
-            this.sound_reaction = sound_reaction.toString();
+            this.soundReaction = sound_reaction.toString();
 
             return this;
         }
 
         public Builder setMinSignal(String min_signal) {
             if ( Integer.parseInt(min_signal) < 0  || Integer.parseInt(min_signal) > 255) throw new GLampParamsException("setMinSignal", "Параметр min_signal должный быть в промежутке от 0 до 255");
-            this.min_signal = min_signal;
+            this.minSignal = min_signal;
 
             return this;
         }
 
         public Builder setMinSignal(Integer min_signal) {
             if ( min_signal < 0  || min_signal > 255) throw new GLampParamsException("setMinSignal", "Параметр min_signal должный быть в промежутке от 0 до 255");
-            this.min_signal = min_signal.toString();
+            this.minSignal = min_signal.toString();
 
             return this;
         }
 
         public Builder setMaxSignal(String max_signal) {
             if ( Integer.parseInt(max_signal) < 0  || Integer.parseInt(max_signal) > 255) throw new GLampParamsException("setMaxSignal", "Параметр max_signal должный быть в промежутке от 0 до 255");
-            this.max_signal = max_signal;
+            this.maxSignal = max_signal;
 
             return this;
         }
 
         public Builder setMaxSignal(Integer max_signal) {
             if ( max_signal < 0  || max_signal > 255) throw new GLampParamsException("setMaxSignal", "Параметр max_signal должный быть в промежутке от 0 до 255");
-            this.max_signal = max_signal.toString();
+            this.maxSignal = max_signal.toString();
 
             return this;
         }
@@ -248,14 +299,14 @@ public class GLampMode {
 
         public Builder setFromCenter(String from_center) {
             if ( Integer.parseInt(from_center) < 0  || Integer.parseInt(from_center) > 1) throw new GLampParamsException("setFromCenter", "Параметр from_center должный быть 0 (выкл) или 1 (вкл)");
-            this.from_center = from_center;
+            this.fromCenter = from_center;
 
             return this;
         }
 
         public Builder setFromCenter(Integer from_center) {
             if ( from_center < 0  || from_center > 1) throw new GLampParamsException("setFromCenter", "Параметр from_center должный быть 0 (выкл) или 1 (вкл)");
-            this.from_center = from_center.toString();
+            this.fromCenter = from_center.toString();
 
             return this;
         }
@@ -290,9 +341,9 @@ public class GLampMode {
         }
 
         public GLampMode build(){
-            return new GLampMode(effect_type, flag_personal_brightness, personal_brightness,
-                    additional, sound_reaction, min_signal, max_signal, speed,
-                    palette, scale, from_center, color, random);
+            return new GLampMode(effectType, flagPersonalBrightness, personalBrightness,
+                    additional, soundReaction, minSignal, maxSignal, speed,
+                    palette, scale, fromCenter, color, random);
         }
     }
 }
