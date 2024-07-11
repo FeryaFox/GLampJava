@@ -7,7 +7,6 @@ import ru.feryafox.GLamp.GLampData.*;
 
 import java.io.IOException;
 import java.net.*;
-import java.util.ArrayList;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
@@ -15,7 +14,6 @@ public class GLamp {
     private String key = "GL";
     private String lampIp = null;
     private String localIp = null;
-    private String broadcastIp = null;
     private Integer port = null;
     private String netmask = "255.255.255.0";
     private Integer groupId = 1;
@@ -45,6 +43,33 @@ public class GLamp {
         return groupId;
     }
 
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
+        genPort();
+    }
+
+    public void setNetmask(String netmask) {
+        this.netmask = netmask;
+        genBroadcastLampIp();
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    public void setLocalIp(String localIp) {
+        this.localIp = localIp;
+    }
+
+    public void setLampIp(String lampIp) {
+        this.lampIp = lampIp;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+        genPort();
+    }
+
     private GLamp(String key, String localIp, String lampIp, Integer port, String netmask, Integer groupId){
         this.key = key;
         this.groupId = groupId;
@@ -52,8 +77,15 @@ public class GLamp {
         this.localIp = Objects.requireNonNullElseGet(localIp, GLampUtils::getLocalIp);
         this.lampIp = Objects.requireNonNullElseGet(lampIp, () -> GLampUtils.getBroadcastAddress(this.localIp, this.netmask));
         this.port = Objects.requireNonNullElseGet(port, () -> GLampUtils.genPort(key, groupId));
-        this.broadcastIp = GLampUtils.getBroadcastAddress(this.localIp, this.netmask);
         createSocket();
+    }
+
+    private void genPort(){
+        this.port = GLampUtils.genPort(key, groupId);
+    }
+
+    private void genBroadcastLampIp(){
+        this.lampIp = GLampUtils.getBroadcastAddress(this.localIp, this.netmask);
     }
 
     public static class Builder{
