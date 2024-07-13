@@ -98,7 +98,7 @@ public class GLampPalette implements Iterable<GLampBand>{
 
     @Override
     public Iterator<GLampBand> iterator() {
-        return null;
+        return new GLampBandIterator();
     }
 
     private class GLampBandIterator implements Iterator<GLampBand> {

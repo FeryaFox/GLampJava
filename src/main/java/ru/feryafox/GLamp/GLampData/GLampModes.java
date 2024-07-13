@@ -1,8 +1,10 @@
 package ru.feryafox.GLamp.GLampData;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-public class GLampModes {
+public class GLampModes implements Iterable<GLampMode> {
     private ArrayList<GLampMode> modes;
     private int currentMode = 1;
 
@@ -81,5 +83,32 @@ public class GLampModes {
         }
 
         return modes;
+    }
+
+    @Override
+    public Iterator<GLampMode> iterator() {
+        return new GLampModesIterator();
+    }
+
+    private class GLampModesIterator implements Iterator<GLampMode>{
+        private int currentIndex = 0;
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < modes.size();
+        }
+
+        @Override
+        public GLampMode next() {
+            if (hasNext()) {
+                return modes.get(currentIndex++);
+            }
+            throw new NoSuchElementException();
+        }
+
+        @Override
+        public void remove() {
+
+        }
     }
 }
