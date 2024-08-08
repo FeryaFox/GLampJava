@@ -1,11 +1,12 @@
 package ru.feryafox.GLamp.GLampData;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class GLampModes implements Iterable<GLampMode> {
-    private ArrayList<GLampMode> modes;
+    private final ArrayList<GLampMode> modes;
     private int currentMode = 1;
 
     public GLampModes() {
@@ -27,6 +28,22 @@ public class GLampModes implements Iterable<GLampMode> {
 
     public void setModes(int index, GLampMode mode) {
         modes.set(index, mode);
+    }
+
+    public void nextMode() {
+        if (currentMode == modes.size()) {
+            currentMode = 1;
+            return;
+        }
+        currentMode++;
+    }
+
+    public void prevMode() {
+        if (currentMode == 1) {
+            currentMode = modes.size();
+            return;
+        }
+        currentMode--;
     }
 
     public int getModesCount(){
@@ -109,6 +126,142 @@ public class GLampModes implements Iterable<GLampMode> {
         @Override
         public void remove() {
 
+        }
+    }
+
+    public static class Converter {
+        private static final HashMap<Integer, String> effectTypes = new HashMap<>() {{
+            put(1, "Перлин");
+            put(2, "Цвет");
+            put(3, "Смена");
+            put(4, "Градиент");
+            put(5, "Частицы");
+            put(6, "Огонь");
+            put(7, "Погода");
+        }};
+
+        private static final HashMap<Integer, String> additional = new HashMap<>() {{
+           put(1, "Нет");
+           put(2, "Громкость");
+           put(3, "Низкие");
+           put(4, "Высокие");
+           put(5, "Часы");
+        }};
+
+        private static final HashMap<Integer, String> soundReactions = new HashMap<>() {{
+           put(1, "Яркость");
+           put(2, "Масштаб");
+           put(3, "Длина");
+        }};
+
+        private static final HashMap<Integer, String> palettes = new HashMap<>() {{
+            put(1, "Кастом");
+            put(2, "Тепловая");
+            put(3, "Огненная");
+            put(4, "Лава");
+            put(5, "Вечеринка");
+            put(6, "Радуга");
+            put(7, "Полосатая радуга");
+            put(8, "Облака");
+            put(9, "Океан");
+            put(10, "Лес");
+            put(11, "Закат");
+            put(12, "Полиция");
+            put(13, "Оптимус Прайм");
+            put(14, "Тёплая лава");
+            put(15, "Холодная лава");
+            put(16, "Горячая лава");
+            put(17, "Розовая лава");
+            put(18, "Уютный");
+            put(19, "Киберпанк");
+            put(20, "Девчачая");
+            put(21, "Рождество");
+            put(22, "Кислота");
+            put(23, "Синий дым");
+            put(24, "Жвачка");
+            put(25, "Леопард");
+            put(26, "Аврора");
+        }};
+
+        public static String getEffectTypeNameById(int id){
+            return effectTypes.get(id);
+        }
+
+        public static String getAdditionalNameById(int id){
+            return additional.get(id);
+        }
+
+        public static String getSoundReactionNameById(int id){
+            return soundReactions.get(id);
+        }
+
+        public static String getPaletteNameById(int id){
+            return palettes.get(id);
+        }
+
+        public static ArrayList<String> getAllEffectTypeName(){
+            ArrayList<String> effectTypeNames = new ArrayList<>();
+
+            for (Integer effectTypeId : effectTypes.keySet()) {
+                effectTypeNames.add(getEffectTypeNameById(effectTypeId));
+            }
+            return effectTypeNames;
+        }
+
+        public static ArrayList<String> getAllAdditionalName(){
+            ArrayList<String> additionalNames = new ArrayList<>();
+
+            for (Integer effectTypeId : additional.keySet()) {
+                additionalNames.add(getAdditionalNameById(effectTypeId));
+            }
+            return additionalNames;
+        }
+
+        public static ArrayList<String> getAllSoundReactionName(){
+            ArrayList<String> soundReactionNames = new ArrayList<>();
+
+            for (Integer soundReaction : soundReactions.keySet()){
+                soundReactionNames.add(getSoundReactionNameById(soundReaction));
+            }
+            return soundReactionNames;
+        }
+
+        public static ArrayList<String> getAllPaletteName(){
+            ArrayList<String> palleteNames = new ArrayList<>();
+
+            for (Integer paletteId : palettes.keySet()){
+                palleteNames.add(getPaletteNameById(paletteId));
+            }
+            return palleteNames;
+        }
+
+
+        public static int getEffectTypeIdByName(String name){
+            for (Integer effectTypeId : effectTypes.keySet()) {
+                if (getEffectTypeNameById(effectTypeId).equals(name)) return effectTypeId;
+            }
+            return -1;
+        }
+
+        public static int getAdditionalIdByName(String name){
+            for (Integer additionalId : additional.keySet()) {
+                if (getAdditionalNameById(additionalId).equals(name)) return additionalId;
+            }
+            return -1;
+        }
+
+        public static int getSoundReactionIdByName(String name){
+            for (Integer soundReactionId : soundReactions.keySet()){
+                if (getSoundReactionNameById(soundReactionId).equals(name)) return soundReactionId;
+            }
+            return -1;
+        }
+
+        public static int getPaletteIdByName(String name){
+            for (Integer paletteId : palettes.keySet()) {
+                if (getPaletteNameById(paletteId).equals(name)) return paletteId;
+            }
+            return -1;
         }
     }
 }
