@@ -187,16 +187,32 @@ public class GLampModes implements Iterable<GLampMode> {
             return effectTypes.get(id);
         }
 
+        public static String getEffectTypeNameById(String id){
+            return effectTypes.get(Integer.parseInt(id));
+        }
+
         public static String getAdditionalNameById(int id){
             return additional.get(id);
+        }
+
+        public static String getAdditionalNameById(String id){
+            return additional.get(Integer.parseInt(id));
         }
 
         public static String getSoundReactionNameById(int id){
             return soundReactions.get(id);
         }
 
+        public static String getSoundReactionNameById(String id){
+            return soundReactions.get(Integer.parseInt(id));
+        }
+
         public static String getPaletteNameById(int id){
             return palettes.get(id);
+        }
+
+        public static String getPaletteNameById(String id){
+            return palettes.get(Integer.parseInt(id));
         }
 
         public static ArrayList<String> getAllEffectTypeName(){
