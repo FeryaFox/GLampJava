@@ -1,7 +1,13 @@
 package ru.feryafox.GLamp.GLampData;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import ru.feryafox.GLamp.Exceptions.GLampParamsException;
 
+@Getter
+@Setter
+@AllArgsConstructor
 public class GLampMode {
     private String effectType = "";
     private String flagPersonalBrightness = "";
@@ -16,128 +22,6 @@ public class GLampMode {
     private String fromCenter = "";
     private String color = "";
     private String random = "";
-
-    public GLampMode(String effectType, String flagPersonalBrightness, String personalBrightness,
-                     String additional, String soundReaction, String minSignal, String maxSignal, String speed,
-                     String palette, String scale, String fromCenter, String color, String random) {
-        this.effectType = effectType;
-        this.flagPersonalBrightness = flagPersonalBrightness;
-        this.personalBrightness = personalBrightness;
-        this.additional = additional;
-        this.soundReaction = soundReaction;
-        this.minSignal = minSignal;
-        this.maxSignal = maxSignal;
-        this.speed = speed;
-        this.palette = palette;
-        this.scale = scale;
-        this.fromCenter = fromCenter;
-        this.color = color;
-        this.random = random;
-    }
-
-    public String getEffectType() {
-        return effectType;
-    }
-
-    public String getFlagPersonalBrightness() {
-        return flagPersonalBrightness;
-    }
-
-    public String getPersonalBrightness() {
-        return personalBrightness;
-    }
-
-    public String getAdditional() {
-        return additional;
-    }
-
-    public String getSoundReaction() {
-        return soundReaction;
-    }
-
-    public String getMinSignal() {
-        return minSignal;
-    }
-
-    public String getMaxSignal() {
-        return maxSignal;
-    }
-
-    public String getSpeed() {
-        return speed;
-    }
-
-    public String getPalette() {
-        return palette;
-    }
-
-    public String getScale() {
-        return scale;
-    }
-
-    public String getFromCenter() {
-        return fromCenter;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String getRandom() {
-        return random;
-    }
-
-    public void setFlagPersonalBrightness(String flag_personal_brightness) {
-        this.flagPersonalBrightness = flag_personal_brightness;
-    }
-
-    public void setEffectType(String effectType) {
-        this.effectType = effectType;
-    }
-
-    public void setPersonalBrightness(String personalBrightness) {
-        this.personalBrightness = personalBrightness;
-    }
-
-    public void setAdditional(String additional) {
-        this.additional = additional;
-    }
-
-    public void setSoundReaction(String soundReaction) {
-        this.soundReaction = soundReaction;
-    }
-
-    public void setMinSignal(String minSignal) {
-        this.minSignal = minSignal;
-    }
-
-    public void setMaxSignal(String maxSignal) {
-        this.maxSignal = maxSignal;
-    }
-
-    public void setSpeed(String speed) {
-        this.speed = speed;
-    }
-
-    public void setPalette(String palette) {
-        this.palette = palette;
-    }
-
-    public void setScale(String scale) {
-        this.scale = scale;
-    }
-
-    public void setFromCenter(String fromCenter) {
-        this.fromCenter = fromCenter;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setRandom(String random) {
-        this.random = random;
-    }
 
     @Override
     public String toString() {

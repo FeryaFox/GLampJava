@@ -1,35 +1,20 @@
 package ru.feryafox.GLamp.GLampData;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 import ru.feryafox.GLamp.Exceptions.GLampParamsException;
 
+@Getter
+@Setter
+@AllArgsConstructor
 public class GLampControls {
     private String modesIndex = "1";
     private String WIFIMode = "0";
     private String role = "0";
     private String groupNumber = "0";
 
-    public GLampControls(String modesIndex, String WIFIMode, String role, String groupNumber) {
-        this.modesIndex = modesIndex;
-        this.WIFIMode = WIFIMode;
-        this.role = role;
-        this.groupNumber = groupNumber;
-    }
-
-    public String getModesIndex() {
-        return modesIndex;
-    }
-
-    public String getWIFIMode() {
-        return WIFIMode;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public String getGroupNumber() {
-        return groupNumber;
-    }
 
     public static class Builder {
         private String modesIndex = "1";
@@ -92,7 +77,8 @@ public class GLampControls {
 
     public static GLampControls buildFromResponse (String response) {
         String[] r = response.split(",");
-        Builder b = new Builder();
+        GLampControls.Builder b = new Builder();
+
         b.setModesIndex(r[6]);
         b.setWIFIMode(r[7]);
         b.setRole(r[8]);

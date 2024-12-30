@@ -1,10 +1,13 @@
 package ru.feryafox.GLamp.GLampData;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+@Getter
 public class GLampModes implements Iterable<GLampMode> {
     private final ArrayList<GLampMode> modes;
     private int currentMode = 1;
@@ -20,10 +23,6 @@ public class GLampModes implements Iterable<GLampMode> {
 
     public void addMode(GLampMode mode) {
         modes.add(mode);
-    }
-
-    public ArrayList<GLampMode> getModes() {
-        return modes;
     }
 
     public void setModes(int index, GLampMode mode) {
@@ -60,10 +59,6 @@ public class GLampModes implements Iterable<GLampMode> {
 
     public void setCurrentMode(String currentMode) {
         this.currentMode = Integer.parseInt(currentMode);
-    }
-
-    public int getCurrentMode() {
-        return currentMode;
     }
 
     public GLampMode getMode(int index) {

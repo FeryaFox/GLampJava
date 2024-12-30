@@ -33,7 +33,7 @@ dependencyResolutionManagement {
 
 ```gradle
 dependencies {
-        implementation 'com.github.FeryaFox:GLampJava:1.0.6'
+        implementation 'com.github.FeryaFox:GLampJava:1.0.7'
 }
 ```
 
@@ -56,7 +56,7 @@ dependencies {
 <dependency>
     <groupId>com.github.FeryaFox</groupId>
     <artifactId>GLampJava</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
 </dependency>
 ```
 
