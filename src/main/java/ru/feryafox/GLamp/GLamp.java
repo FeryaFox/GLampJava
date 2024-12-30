@@ -1,5 +1,8 @@
 package ru.feryafox.GLamp;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 import ru.feryafox.GLamp.Exceptions.GLampParamsException;
 import ru.feryafox.GLamp.Exceptions.GLampRequestsException;
 import ru.feryafox.GLamp.Exceptions.GLampSyncTimeoutException;
@@ -10,6 +13,9 @@ import java.net.*;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
+@Getter
+@Setter
+@Builder(builderClassName = "Builder", setterPrefix = "set")
 public class GLamp {
     private String key = "GL";
     private String lampIp = null;
@@ -19,29 +25,6 @@ public class GLamp {
     private Integer groupId = 1;
     private DatagramSocket socket = null;
 
-    public Integer getPort() {
-        return port;
-    }
-
-    public String getLampIp() {
-        return lampIp;
-    }
-
-    public String getLocalIp() {
-        return localIp;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public String getNetmask() {
-        return netmask;
-    }
-
-    public Integer getGroupId() {
-        return groupId;
-    }
 
     public void setGroupId(Integer groupId) {
         this.groupId = groupId;
@@ -51,18 +34,6 @@ public class GLamp {
     public void setNetmask(String netmask) {
         this.netmask = netmask;
         genBroadcastLampIp();
-    }
-
-    public void setPort(Integer port) {
-        this.port = port;
-    }
-
-    public void setLocalIp(String localIp) {
-        this.localIp = localIp;
-    }
-
-    public void setLampIp(String lampIp) {
-        this.lampIp = lampIp;
     }
 
     public void setKey(String key) {
@@ -86,51 +57,6 @@ public class GLamp {
 
     private void genBroadcastLampIp(){
         this.lampIp = GLampUtils.getBroadcastAddress(this.localIp, this.netmask);
-    }
-
-    public static class Builder{
-
-        private String key = "GL";
-        private String lampIp = null;
-        private String localIp = null;
-        private Integer port = null;
-        private String netmask = "255.255.255.0";
-        private Integer groupId = 1;
-
-
-        public Builder setKey(String key){
-            this.key = key;
-            return this;
-        }
-
-        public Builder setLampIp(String lampIp){
-            this.lampIp = lampIp;
-            return this;
-        }
-
-        public Builder setLocalIp(String localIp){
-            this.localIp = localIp;
-            return this;
-        }
-
-        public Builder setPort(Integer port){
-            this.port = port;
-            return this;
-        }
-
-        public Builder setNetmask(String netmask){
-            this.netmask = netmask;
-            return this;
-        }
-
-        public Builder setGroupId(Integer groupId){
-            this.groupId = groupId;
-            return this;
-        }
-
-        public GLamp build(){
-            return new GLamp(key, localIp, lampIp, port, netmask, groupId);
-        }
     }
 
     private void createSocket(){
