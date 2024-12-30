@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 
 @Getter
 @Setter
-@Builder(builderClassName = "Builder", setterPrefix = "set")
 public class GLamp {
     private String key = "GL";
     private String lampIp = null;
@@ -41,7 +40,52 @@ public class GLamp {
         genPort();
     }
 
-    private GLamp(String key, String localIp, String lampIp, Integer port, String netmask, Integer groupId){
+    public static class Builder{
+
+        private String key = "GL";
+        private String lampIp = null;
+        private String localIp = null;
+        private Integer port = null;
+        private String netmask = "255.255.255.0";
+        private Integer groupId = 1;
+
+
+        public Builder setKey(String key){
+            this.key = key;
+            return this;
+        }
+
+        public Builder setLampIp(String lampIp){
+            this.lampIp = lampIp;
+            return this;
+        }
+
+        public Builder setLocalIp(String localIp){
+            this.localIp = localIp;
+            return this;
+        }
+
+        public Builder setPort(Integer port){
+            this.port = port;
+            return this;
+        }
+
+        public Builder setNetmask(String netmask){
+            this.netmask = netmask;
+            return this;
+        }
+
+        public Builder setGroupId(Integer groupId){
+            this.groupId = groupId;
+            return this;
+        }
+
+        public GLamp build(){
+            return new GLamp(key, localIp, lampIp, port, netmask, groupId);
+        }
+    }
+
+    public GLamp(String key, String localIp, String lampIp, Integer port, String netmask, Integer groupId){
         this.key = key;
         this.groupId = groupId;
         this.netmask = netmask;
