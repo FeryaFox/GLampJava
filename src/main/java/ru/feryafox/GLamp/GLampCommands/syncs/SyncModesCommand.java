@@ -1,8 +1,8 @@
-package ru.feryafox.GLamp.GLampData.GLampCommands.syncs;
+package ru.feryafox.GLamp.GLampCommands.syncs;
 
 import lombok.Getter;
 import ru.feryafox.GLamp.GLamp;
-import ru.feryafox.GLamp.GLampData.GLampCommands.LampCommand;
+import ru.feryafox.GLamp.GLampCommands.LampCommand;
 import ru.feryafox.GLamp.GLampData.GLampModes;
 
 /**

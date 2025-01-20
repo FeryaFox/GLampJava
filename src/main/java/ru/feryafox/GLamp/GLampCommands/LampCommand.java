@@ -1,4 +1,4 @@
-package ru.feryafox.GLamp.GLampData.GLampCommands;
+package ru.feryafox.GLamp.GLampCommands;
 
 public interface LampCommand {
     void execute();

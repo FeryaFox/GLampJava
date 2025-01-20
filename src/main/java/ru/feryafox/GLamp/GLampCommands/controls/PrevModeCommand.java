@@ -1,7 +1,7 @@
-package ru.feryafox.GLamp.GLampData.GLampCommands.controls;
+package ru.feryafox.GLamp.GLampCommands.controls;
 
 import ru.feryafox.GLamp.GLamp;
-import ru.feryafox.GLamp.GLampData.GLampCommands.LampCommand;
+import ru.feryafox.GLamp.GLampCommands.LampCommand;
 
 /**
  * Команда "предыдущий режим"

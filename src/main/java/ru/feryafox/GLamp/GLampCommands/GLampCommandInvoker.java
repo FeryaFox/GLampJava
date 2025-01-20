@@ -1,4 +1,4 @@
-package ru.feryafox.GLamp.GLampData.GLampCommands;
+package ru.feryafox.GLamp.GLampCommands;
 
 import java.util.ArrayList;
 import java.util.List;

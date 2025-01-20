@@ -1,7 +1,7 @@
-package ru.feryafox.GLamp.GLampData.GLampCommands.updates;
+package ru.feryafox.GLamp.GLampCommands.updates;
 
 import ru.feryafox.GLamp.GLamp;
-import ru.feryafox.GLamp.GLampData.GLampCommands.LampCommand;
+import ru.feryafox.GLamp.GLampCommands.LampCommand;
 import ru.feryafox.GLamp.GLampData.GLampDawn;
 
 /**
